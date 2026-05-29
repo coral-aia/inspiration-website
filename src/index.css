@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --nue-bg: #F0F0F3;
+    --nue-surface: #F0F0F3;
+    --nue-deep: #EEEEEE;
+    --nue-highlight: #FFFFFF;
+    --nue-shadow: rgba(174, 174, 192, 0.4);
+    --nue-shadow-inset: rgba(174, 174, 192, 0.2);
+
+    --neu-primary: #728AB7;
+    --neu-purple: #745FF2;
+    --neu-lime: #83DBD6;
+    --neu-pink: #FB7575;
+    --neu-violet: #C590EF;
+    --neu-gray: #808B9F;
+
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 226 100% 97%;
+    --accent-foreground: 224 76% 48%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+    --radius: 0.625rem;
+  }
+
+  body {
+    background-color: var(--nue-bg);
+    color: #475569;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  /* Neumorphism 凸起阴影 */
+  .nue-elevated {
+    background: var(--nue-surface);
+    box-shadow: -4px -4px 8px var(--nue-highlight), 4px 4px 8px var(--nue-shadow);
+  }
+
+  .nue-elevated-sm {
+    background: var(--nue-surface);
+    box-shadow: -2px -2px 4px var(--nue-highlight), 2px 2px 4px var(--nue-shadow);
+  }
+
+  .nue-elevated-hover {
+    box-shadow: -6px -6px 12px var(--nue-highlight), 6px 6px 12px rgba(174, 174, 192, 0.5);
+  }
+
+  /* Neumorphism 凹陷/内阴影 */
+  .nue-pressed {
+    background: var(--nue-deep);
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.7), inset 2px 2px 4px var(--nue-shadow-inset);
+  }
+
+  .nue-pressed-sm {
+    background: var(--nue-deep);
+    box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.6), inset 1px 1px 3px var(--nue-shadow-inset);
+  }
+
+  /* Neumorphism 按钮 */
+  .nue-btn {
+    background: var(--nue-surface);
+    box-shadow: -3px -3px 6px var(--nue-highlight), 3px 3px 6px var(--nue-shadow);
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .nue-btn:hover {
+    box-shadow: -5px -5px 10px var(--nue-highlight), 5px 5px 10px rgba(174, 174, 192, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .nue-btn:active {
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.7), inset 2px 2px 4px var(--nue-shadow-inset);
+    transform: translateY(1px);
+  }
+
+  /* Neumorphism 输入框 */
+  .nue-input {
+    background: var(--nue-deep);
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.7), inset 2px 2px 4px var(--nue-shadow-inset);
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .nue-input:focus {
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.8), inset 3px 3px 6px rgba(174, 174, 192, 0.3);
+  }
+
+  .nue-input::placeholder {
+    color: #94A3B8;
+  }
+
+  /* 文字渐变 - Neumorphism 风格改为主色 */
+  .text-gradient-neu {
+    background: linear-gradient(135deg, #728AB7, #745FF2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4C4CF;
+  border-radius: 3px;
+  box-shadow: inset -1px -1px 2px rgba(255,255,255,0.5), inset 1px 1px 2px rgba(174,174,192,0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A0A0B0;
+}
